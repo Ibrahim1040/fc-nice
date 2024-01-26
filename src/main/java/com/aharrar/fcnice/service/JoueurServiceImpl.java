@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.aharrar.fcnice.entities.Equipe;
 import com.aharrar.fcnice.entities.Joueur;
+import com.aharrar.fcnice.repository.EquipeRepository;
 import com.aharrar.fcnice.repository.JoueurRepository;
 
 @Service
@@ -13,6 +15,11 @@ public class JoueurServiceImpl implements JoueurService{
 	
 	@Autowired
 	JoueurRepository joueurRepository;
+	
+	@Autowired
+	EquipeRepository equipeRepository;
+	
+	
 
 	@Override
 	public Joueur saveJoueur(Joueur j) {
@@ -41,8 +48,15 @@ public class JoueurServiceImpl implements JoueurService{
 	}
 
 	@Override
+	
 	public List<Joueur> getAllJoueur() {
 		return joueurRepository.findAll();
 	}
 
+	/*
+	 * @Override public void AffecterJoueurAEquipe(Long idJoueur, Long idEquipe) {
+	 * Equipe equipe = equipeRepository.findById(idEquipe).get(); Joueur joueur =
+	 * joueurRepository.findById(idJoueur).get(); joueur.setEquipe(equipe);
+	 * joueurRepository.save(joueur); }
+	 */
 }

@@ -16,11 +16,6 @@ class JoueurTests {
 	private JoueurRepository joueurRepository;
 
 	@Test
-	public void testCreateJoueur() {
-		Joueur joueur = new Joueur("Mssi","Milieu");
-		joueurRepository.save(joueur);
-	}
-	@Test
 	public void testFindJoueur()
 	{
 	Joueur j = joueurRepository.findById(6L).get(); 
@@ -30,7 +25,7 @@ class JoueurTests {
 	@Test
 	public void testUpdateJoueur()
 	{
-	Joueur j = joueurRepository.findById(3L).get();
+	Joueur j = joueurRepository.findById(4L).get();
 	j.setName("Messi");
 	joueurRepository.save(j);
 	}

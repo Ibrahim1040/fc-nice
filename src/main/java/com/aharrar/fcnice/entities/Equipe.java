@@ -1,6 +1,5 @@
 package com.aharrar.fcnice.entities;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,7 +23,14 @@ public class Equipe {
 	private String acronyme;
 	private Double budget;
 	
-	
+	/*
+	 * @OneToMany (mappedBy = "equipe") private List<Joueur> joueurs;
+	 */
+	/*
+	 * 
+	 * public List<Joueur> getJoueurs() { return joueurs; } public void
+	 * setJoueurs(List<Joueur> joueurs) { this.joueurs = joueurs; }
+	 */
 	public Long getId() {
 		return id;
 	}
@@ -52,18 +58,21 @@ public class Equipe {
 	public Equipe() {
 		
 	}
+	
 	public Equipe(Long id, String name, String acronyme, Double budget) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.acronyme = acronyme;
 		this.budget = budget;
+		
 	}
 	@Override
 	public String toString() {
-		return "Equipe [id=" + id + ", name=" + name + ", acronyme=" + acronyme + ", budget="
-				+ budget + "]";
+		return "Equipe [id=" + id + ", name=" + name + ", acronyme=" + acronyme + ", budget=" + budget + "]";
 	}
+	
+	
 	
 	
 

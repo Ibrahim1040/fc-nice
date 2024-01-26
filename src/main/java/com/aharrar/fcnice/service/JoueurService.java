@@ -12,6 +12,7 @@ public interface JoueurService {
 	void deleteJoueurById(Long id);
 	Joueur getJoueur(Long id);
 	List<Joueur> getAllJoueur();
+	//void AffecterJoueurAEquipe(Long idJoueur,Long idEquipe);
 
 
 }
